@@ -14,6 +14,6 @@ java -cp out Main
 ## Clone it
 
 ```bash
-git clone https://github.com/<ORG>/booko.git
+git clone https://github.com/JanDexter/booko.git
 cd booko
 ```
