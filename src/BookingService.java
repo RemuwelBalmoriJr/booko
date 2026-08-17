@@ -19,9 +19,9 @@ class BookingService {
         return drinks.get(index);
     }
 
-    String book(String customerName, Drink drink, String deliveryDate) {
+    String book(String customerName, Drink drink, int quantity, String deliveryDate) {
         return String.format(
-                "Booked! %s x1 %s for %s, delivering on %s.",
-                drink.name(), drink.priceLabel(), customerName, deliveryDate);
+                "Booked! %s x%d %s for %s, delivering on %s.",
+                drink.name(), quantity, drink.priceLabel(), customerName, deliveryDate);
     }
 }
