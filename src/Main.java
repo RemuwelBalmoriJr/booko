@@ -46,8 +46,12 @@ class Main {
         List<Drink> drinks = service.listDrinks();
         viewFlavors(service);
 
-        System.out.print("Your name: ");
+        System.out.print("Your name (or 'cancel'): ");
         String name = scanner.nextLine().trim();
+        if (name.equalsIgnoreCase("cancel")) {
+            System.out.println("Order cancelled.");
+            return;
+        }
         if (name.isEmpty()) {
             System.out.println("Name cannot be empty.");
             return;
