@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -65,9 +67,16 @@ class Main {
         }
 
         System.out.print("Delivery date (yyyy-MM-dd): ");
-        String deliveryDate = scanner.nextLine().trim();
+        String dateInput = scanner.nextLine().trim();
+        LocalDate deliveryDate;
+        try {
+            deliveryDate = LocalDate.parse(dateInput);
+        } catch (DateTimeParseException e) {
+            System.out.println("Use the format yyyy-MM-dd.");
+            return;
+        }
 
         Drink chosen = drinks.get(flavorNumber - 1);
-        System.out.println(service.book(name, chosen, deliveryDate));
+        System.out.println(service.book(name, chosen, deliveryDate.toString()));
     }
 }
