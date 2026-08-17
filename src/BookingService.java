@@ -21,8 +21,9 @@ class BookingService {
     }
 
     String book(String customerName, Drink drink, int quantity, String deliveryDate) {
+        double total = drink.price() * quantity;
         return String.format(
-                "Booked! %s x%d %s for %s, delivering on %s.",
-                drink.name(), quantity, drink.priceLabel(), customerName, deliveryDate);
+                "Booked! %s x%d for %s, total %s, delivering on %s.",
+                drink.name(), quantity, customerName, String.format("₱%.2f", total), deliveryDate);
     }
 }
