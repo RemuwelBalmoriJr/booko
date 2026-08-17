@@ -20,10 +20,12 @@ class BookingService {
         return drinks.get(index);
     }
 
-    String book(String customerName, Drink drink, int quantity, String deliveryDate) {
-        double total = drink.price() * quantity;
+    String book(String customerName, Drink drink, int quantity, boolean large, String deliveryDate) {
+        double unitPrice = large ? drink.price() + 15.00 : drink.price();
+        double total = unitPrice * quantity;
+        String size = large ? "large" : "regular";
         return String.format(
-                "Booked! %s x%d for %s, total %s, delivering on %s.",
-                drink.name(), quantity, customerName, String.format("₱%.2f", total), deliveryDate);
+                "Booked! %s (%s) x%d for %s, total %s, delivering on %s.",
+                drink.name(), size, quantity, customerName, String.format("₱%.2f", total), deliveryDate);
     }
 }

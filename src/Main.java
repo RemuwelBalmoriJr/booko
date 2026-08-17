@@ -97,7 +97,11 @@ class Main {
             return;
         }
 
+        System.out.print("Size (regular/large): ");
+        String size = scanner.nextLine().trim().toLowerCase();
+        boolean large = size.equals("large");
+
         Drink chosen = drinks.get(flavorNumber - 1);
-        System.out.println(service.book(name, chosen, quantity, deliveryDate.toString()));
+        System.out.println(service.book(name, chosen, quantity, large, deliveryDate.toString()));
     }
 }
