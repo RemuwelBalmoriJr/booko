@@ -1,6 +1,6 @@
 # Booko
 
-Booko is a tiny command-line app for booking buko (young coconut) juice
+Booko is a tiny command-line app for booking buko juice
 orders. It's plain Java with no build tool and no dependencies — written
 as the teaching repo for a 90-minute introductory Git workshop.
 
