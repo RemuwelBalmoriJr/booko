@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 class Main {
 
-    static final String HEADER = "Booko — fresh buko, booked daily";
+    static final String HEADER = "Booko - fresh buko, booked daily";
 
     public static void main(String[] args) {
         System.out.println(HEADER);
@@ -23,13 +23,18 @@ class Main {
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
-                case "1" -> viewFlavors(service);
-                case "2" -> bookOrder(service, scanner);
-                case "3" -> {
+                case "1":
+                    viewFlavors(service);
+                    break;
+                case "2":
+                    bookOrder(service, scanner);
+                    break;
+                case "3":
                     System.out.println("Salamat! See you next order.");
                     return;
-                }
-                default -> System.out.println("Please enter 1, 2, or 3.");
+                default:
+                    System.out.println("Please enter 1, 2, or 3.");
+                    break;
             }
         }
     }
