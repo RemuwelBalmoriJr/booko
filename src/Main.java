@@ -71,6 +71,19 @@ class Main {
             return;
         }
 
+        System.out.print("How many: ");
+        int quantity;
+        try {
+            quantity = Integer.parseInt(scanner.nextLine().trim());
+        } catch (NumberFormatException e) {
+            System.out.println("That's not a valid number.");
+            return;
+        }
+        if (quantity < 1 ) {
+            System.out.println("Quantity must be a positive number.");
+            return;
+        }
+
         System.out.print("Delivery date (yyyy-MM-dd): ");
         String dateInput = scanner.nextLine().trim();
         LocalDate deliveryDate;
@@ -82,6 +95,6 @@ class Main {
         }
 
         Drink chosen = drinks.get(flavorNumber - 1);
-        System.out.println(service.book(name, chosen, deliveryDate.toString()));
+        System.out.println(service.book(name, quantity,chosen, deliveryDate.toString()));
     }
 }
