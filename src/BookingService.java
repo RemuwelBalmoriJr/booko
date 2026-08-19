@@ -21,7 +21,7 @@ class BookingService {
 
     String book(String customerName, Drink drink, String deliveryDate) {
         return String.format(
-                "Booked! %s x1 %s for %s, delivering on %s.",
-                drink.name(), drink.priceLabel(), customerName, deliveryDate);
+                "Booked! %s x%s %s for %s, delivering on %s.",
+                drink.name(), drink.quantity(), drink.priceLabel(), customerName, deliveryDate);
     }
 }
